@@ -5,14 +5,19 @@ If you want to use nginx-unzip-module with your existing version of nginx you wi
 ## Check Nginx version
 
 nginx -v
+
 nginx version: nginx/1.12.2
 
 ## Download same nginx version
 
+```
 wget http://nginx.org/download/nginx-1.12.2.tar.gz
 tar -xzvf nginx-1.12.2.tar.gz
+```
 
 ## Install missing package
+
+```
 sudo yum install -y libxml2 libxml2-devel gd-devel
 sudo yum install -y GeoIP-data GeoIP-devel GeoIP
 sudo yum install -y gperftools-devel gperftools-libs gperftools
@@ -23,6 +28,7 @@ sudo yum install -y openssl-libs openssl-devel libssl-dev
 sudo yum install -y pcre-devel pcre2-devel git ftp nginx-all-modules
 sudo yum install -y zip unzip gcc make libzip libzip-devel
 sudo yum install -y openssl-libs openssl-devel gcc zlib-devel pcre-devel pcre2-devel
+```
 
 ## Prepare for compilation
 
@@ -50,9 +56,10 @@ make modules
 
 ## Install
 
+```
 sudo cp objs/ngx_http_unzip_module.so /usr/lib64/nginx/modules/
-
 echo 'load_module "/usr/lib64/nginx/modules/ngx_http_unzip_module.so";' > /usr/share/nginx/modules/mod-http-unzip.conf
+```
 
 
 
